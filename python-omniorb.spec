@@ -10,6 +10,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %py_requires -d
 BuildRequires:	openssl-devel
+BuildRequires:	omniorb
 BuildRequires:	omniorb-devel
 BuildRequires:	python-omniidl
 
