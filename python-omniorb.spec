@@ -1,7 +1,7 @@
 Summary:	A robust high performance CORBA ORB for C++ and Python
 Name:		python-omniorb
 Version:	3.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		System/Libraries
 Source0:	http://sourceforge.net/projects/omniorb/files/omniORBpy/omniORBpy-3.4/omniORBpy-3.4.tar.gz
@@ -13,6 +13,7 @@ BuildRequires:	openssl-devel
 BuildRequires:	omniorb
 BuildRequires:	omniorb-devel
 BuildRequires:	python-omniidl
+Conflicts:	pyorbit
 
 %description
 omniORB is a robust high performance CORBA ORB for C++ and Python.
