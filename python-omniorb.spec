@@ -3,7 +3,7 @@
 Summary:	A robust high performance CORBA ORB for C++ and Python
 Name:		python-omniorb
 Version:	3.4
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPL
 Group:		System/Libraries
 Source0:	http://sourceforge.net/projects/omniorb/files/omniORBpy/omniORBpy-3.4/omniORBpy-3.4.tar.gz
@@ -44,6 +44,7 @@ rm -f %{buildroot}%{py_puresitedir}/omniidl_be/__init__.py*
 
 %if !%{conflict_with_pyorbit}
 rm -f %{buildroot}%{py_puresitedir}/CORBA.py
+rm -f %{buildroot}%{py_puresitedir}/PortableServer.py
 %endif
 
 # Custom install target forces generation of .pyc files
