@@ -1,0 +1,10 @@
+--- mk/beforeauto.mk.in.link	2011-04-09 20:03:24.000000000 +0200
++++ mk/beforeauto.mk.in	2011-04-09 20:04:16.000000000 +0200
+@@ -742,6 +742,7 @@
+ 
+ ###################
+ ifdef Linux
++extralibs += -lpython$(PYVERSION)
+ IMPORT_CPPFLAGS += -D__linux__
+ OMNITHREAD_POSIX_CPPFLAGS = -DNoNanoSleep -DPthreadDraftVersion=10
+ OMNITHREAD_CPPFLAGS = -D_REENTRANT
