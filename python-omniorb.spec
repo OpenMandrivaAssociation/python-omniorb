@@ -1,13 +1,12 @@
 Summary:	A robust high performance CORBA ORB for C++ and Python
 Name:		python-omniorb
 Version:	3.4
-Release:	%mkrel 6
+Release:	7
 License:	GPL
 Group:		System/Libraries
 Source0:	http://downloads.sourceforge.net/omniorb/omniORBpy-%{version}.tar.gz
 Patch0:		omniORBpy-3.4-link.patch
 URL:		http://omniorb.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	python-devel
 BuildRequires:	openssl-devel
 BuildRequires:	omniorb
@@ -34,7 +33,6 @@ about the branding program at the Open Group.
 %make
 
 %install
-rm -fr %buildroot
 %makeinstall_std
 # don't conflict with python-omniidl
 rm -f %{buildroot}%{py_puresitedir}/omniidl_be/__init__.py*
@@ -45,12 +43,39 @@ rm -f %{buildroot}%{py_puresitedir}/PortableServer.py
 # Custom install target forces generation of .pyc files
 find %{buildroot} -name \*.pyc | xargs rm -f
 
-%clean
-rm -rf %{buildroot}
-
 %files
 %defattr (-,root,root)
 %{py_platsitedir}/*
+%ifarch x86_64
 %{py_puresitedir}/*
+%endif
 %{_includedir}/omniORB4/*.hh
 %{_includedir}/*.h
+
+
+%changelog
+* Sat Apr 09 2011 Funda Wang <fwang@mandriva.org> 3.4-6mdv2011.0
++ Revision: 652098
+- link with libpython
+
+* Wed Nov 17 2010 Paulo Andrade <pcpa@mandriva.com.br> 3.4-5mdv2011.0
++ Revision: 598474
+- Do not install PortableServer.py when built to not conflict with pyorbit
+
+* Sat Nov 06 2010 Funda Wang <fwang@mandriva.org> 3.4-4mdv2011.0
++ Revision: 593983
+- rebuild
+
+* Thu Sep 30 2010 Paulo Andrade <pcpa@mandriva.com.br> 3.4-3mdv2011.0
++ Revision: 582207
+- Conflict conditionally with pyorbit
+
+* Tue May 11 2010 Paulo Andrade <pcpa@mandriva.com.br> 3.4-2mdv2010.1
++ Revision: 544457
+- Explicitly confict with pyorbit.
+
+* Thu Feb 18 2010 Paulo Andrade <pcpa@mandriva.com.br> 3.4-1mdv2010.1
++ Revision: 507778
+- Import python-omniorb (omniORBpy) version 3.4.
+- python-omniorb
+
