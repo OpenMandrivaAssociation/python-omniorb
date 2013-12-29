@@ -1,0 +1,3 @@
+addFilter("E: unstripped-binary-or-object")
+addFilter("E: non-standard-dir-perm")
+addFilter("E: devel-file-in-non-devel-package")
