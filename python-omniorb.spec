@@ -9,7 +9,7 @@ Group:		System/Libraries
 Source0:	http://softlayer-dal.dl.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-3.7/omniORBpy-%{version}.tar.bz2
 Source1:    %{name}.rpmlintrc
 Patch0:		omniORBpy-3.4-link.patch
-URL:		http://omniorb.sourceforge.net/
+URL:		https://omniorb.sourceforge.net/
 BuildRequires:	python-devel
 BuildRequires:	openssl-devel
 BuildRequires:	omniorb
