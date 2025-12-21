@@ -10,6 +10,11 @@ Source0:	http://softlayer-dal.dl.sourceforge.net/project/omniorb/omniORBpy/omniO
 Source1:    %{name}.rpmlintrc
 Patch0:		omniORBpy-3.4-link.patch
 URL:		https://omniorb.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	python-devel
 BuildRequires:	openssl-devel
 BuildRequires:	omniorb
